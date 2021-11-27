@@ -1,4 +1,6 @@
 from transitions import Machine
+from telegram import Update
+from telegram.ext import Updater, CommandHandler, CallbackContext
 
 
 class OrderFood(object):
