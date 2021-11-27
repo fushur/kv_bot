@@ -44,3 +44,18 @@ class OrderFood(object):
         self.payment_method = None
 
 
+def start(update: Update, context: CallbackContext) -> None:
+    update.message.reply_text('Какую Вы хотите пиццу? Большую или маленькую?')
+
+
+def main():
+    updater = Updater('TOKEN')
+
+    dispatcher = updater.dispatcher
+    dispatcher.add_handler(CommandHandler('start', start))
+
+    updater.start_polling()
+    updater.idle()
+
+
+main()
